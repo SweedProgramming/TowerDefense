@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c5df84c3b75714dbe45ddd2eff8f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyEarnings: 5
   speed: 70
   explotionRadius: 0
   impactEffect: {fileID: 1790519917127013108, guid: 77b8c40ddc0adaf47a9328159ff08a80,

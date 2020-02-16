@@ -5,6 +5,8 @@ public class Bullet : MonoBehaviour
 
     private Transform target;
 
+    public int moneyEarnings;
+
     public float speed = 70f;
     public float explotionRadius = 0f;
 
@@ -76,6 +78,7 @@ public class Bullet : MonoBehaviour
 
     void Damage(Transform enemy)
     {
+        PlayerStats.Money += moneyEarnings;
         Destroy(enemy.gameObject);
     }
 

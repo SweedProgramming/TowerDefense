@@ -9,10 +9,13 @@ public class WaveSpawner : MonoBehaviour
 
     public Transform spawnPoint;
 
+    private int WaveMoney = 0;
+
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
 
     public Text waveCountDownText;
+    
 
     private int waveIndex = 0;
 
@@ -23,6 +26,8 @@ public class WaveSpawner : MonoBehaviour
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
         }
+
+        
 
         countdown -= Time.deltaTime;
 
@@ -37,6 +42,7 @@ public class WaveSpawner : MonoBehaviour
 
         for (int i = 0; i < waveIndex; i++)
         {
+            WaveMoney += 10;
             SpawnEnemy();
             yield return new WaitForSeconds(0.5f);
         }
@@ -46,6 +52,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
+        PlayerStats.Money += WaveMoney;
         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
     }
 
